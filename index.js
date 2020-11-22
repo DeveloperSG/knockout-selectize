@@ -8,7 +8,7 @@ ko.bindingHandlers.selectizeOptions = {
     let $element = $(element);
 
     $element.selectize({
-      dropdownParent: 'body',
+      dropdownParent: null,
       valueField:  ko.unwrap(allBindingsAccessor.get('optionsValue')) || 'id',
       labelField:  ko.unwrap(allBindingsAccessor.get('optionsText')) || 'title',
       searchField: ko.unwrap(allBindingsAccessor.get('optionsSearch')) || 'title',
