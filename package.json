@@ -4,7 +4,14 @@
   "description": "knockout<->selectize adapter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4",
+    "require-dir": "^1.2.0",
+    "nodesecurity-npm-utils": "^6.0.0",
+    "gulp-nsp": "^3.0.1"
   },
   "repository": {
     "type": "git",
@@ -22,6 +29,8 @@
   },
   "homepage": "https://github.com/krnlde/knockout-selectize#readme",
   "dependencies": {
+    "graceful-fs": "^4.2.4",
+    "gulp-nsp": "^3.0.1",
     "jquery": "^3.1.1",
     "knockout": "^3.4.1",
     "selectize": "^0.12.4"
@@ -46,7 +55,6 @@
     "gulp-git": "^1.12.0",
     "gulp-mocha": "^3.0.1",
     "gulp-notify": "^2.2.0",
-    "gulp-nsp": "^2.4.2",
     "gulp-open": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-tag-version": "^1.3.0",
@@ -54,6 +62,7 @@
     "gulp-util": "^3.0.7",
     "minimist": "^1.2.0",
     "mocha": "^3.1.2",
+    "require-dir": "^1.2.0",
     "run-sequence": "^1.2.2",
     "systemjs-plugin-babel": "0.0.17",
     "vinyl-buffer": "^1.0.0",

@@ -76,6 +76,25 @@ gulp.task('security-checkup', (cb) => {
 
 gulp.task('full-checkup', [/*'lint', */'security-checkup', 'test']);
 
+gulp.task('build-dirty', () =>
+  gulp.src('index.js')
+    .pipe(rename('knockout-selectize.js'))
+    .pipe(babel())
+    .pipe(browserify({
+      insertGlobals: true
+    }))
+    .on('prebundle', (bundle) => {
+      bundle.external('knockout');
+      bundle.external('jquery');
+      bundle.external('selectize');
+    })
+    .pipe(gulp.dest('dist'))
+
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('dist'))
+);
+
 gulp.task('build', ['full-checkup'], () =>
   gulp.src('index.js')
     .pipe(rename('knockout-selectize.js'))
